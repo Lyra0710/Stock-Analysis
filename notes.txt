@@ -1,0 +1,51 @@
+143.0.7499.41 (Official Build) (arm64)
+
+PATH=$PATH:"/Users/annie/Library/CloudStorage/OneDrive-Personal/Academics/Masters/SJSU/DATA-200/Lab__2"
+
+export PATH="$PATH:/Users/annie/Library/CloudStorage/OneDrive-Personal/Academics/Masters/SJSU/DATA-200/Lab__2"
+
+stocks.py
+   ↓
+stock_GUI.main()  ← (GUI version enabled)
+   ↓
+StockApp()
+   ↓
+Creates DB (if needed)
+   ↓
+Initializes UI
+   ↓
+User actions trigger:
+   ↳ add_stock() → Stock(...) object
+   ↳ buy_shares() → Stock.buy()
+   ↳ sell_shares() → Stock.sell()
+   ↳ load() → stock_data.load_stock_data()
+   ↳ save() → stock_data.save_stock_data()
+   ↳ scrape_web_data() → stock_data.retrieve_stock_web()
+   ↳ display_chart() → utilities.display_stock_chart()
+   ↓
+Tkinter mainloop()
+
+
+- *************************************************************************
+- stock_GUI.py 
+- For the GUI, we use Tkinter and we are using Menu from Tkinter library 
+- stock_GUI.py
+ └── class StockApp:
+       ├── __init__              <-- build window, menus, layout
+       ├── scrape_web_data       <-- called by Web menu
+       ├── importCSV_web_data    <-- called by Web menu
+       ├── display_stock_data
+       └── all other GUI methods
+- command is a clicable item and cascade is a submenu 
+
+- ListBox shows a list of items. .pack tells the listbox to actually place it in the window (stack things)
+- bind() connects an event to a handler function. 
+- Notebook creates a tabbed interface (like a browser tab)
+- Frame is the content area of the tab
+- Label, Entry (area to type ), Button, Text (multiline text input). grid arranges things in a table, place is positioning 
+- Fixing error when nothing is added 
+
+- UTILITIES.py
+- sorting and creating charts
+- sorting using sort
+- creating graph using matplotlib
