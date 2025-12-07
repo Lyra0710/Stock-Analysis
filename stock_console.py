@@ -489,7 +489,7 @@ def import_csv(stock_list):
         return
     try:
         stock_data.import_stock_web_csv(stock_list, symbol, file_name)
-        print("Imported CSV data for {symbol} from '{filename}'.")
+        print(f"Imported CSV data for {symbol} from '{file_name}'.")
     except:
         print("An error has occurred! Try again. ")
     input("Press Enter to continue...")
