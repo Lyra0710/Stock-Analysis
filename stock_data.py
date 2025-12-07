@@ -132,7 +132,7 @@ def import_stock_web_csv(stock_list,symbol,filename):
                     datareader = csv.reader(stockdata,delimiter=',')
                     next(datareader)
                     for row in datareader:
-                        daily_data = DailyData(datetime.strptime(row[0],"%Y-%m-%d"),float(row[4]),float(row[6]))
+                        daily_data = DailyData(datetime.strptime(row[0],"%Y-%m-%d"),float(row[4]),float(row[6].replace(",", "").strip()))
                         stock.add_data(daily_data)
 
 def main():
