@@ -190,7 +190,7 @@ class StockApp:
     def delete_stock(self):
         selection = self.stockList.curselection()
         if not selection:
-            messagebox.showwarning("Please select a stock to delete. No selection was detected.")
+            messagebox.showwarning("Delete stock", "Please select a stock to delete. No selection was detected.")
             return 
         index = selection[0]
         symbol = self.stockList.get(index)
@@ -200,7 +200,7 @@ class StockApp:
                 selected_stock = s 
                 break
         if selected_stock is None:
-            messagebox.showerror("Selected stock not found in portfolio data.")
+            messagebox.showerror("Delete stock","Selected stock not found in portfolio data.")
             return
         try:
             self.stock_list.remove(selected_stock)
@@ -213,7 +213,7 @@ class StockApp:
         self.dailyDataList.delete("1.0", END)
         self.stockReport.delete("1.0", END)
 
-        messagebox.showinfo(f"Stock {selected_stock.symbol} deleted successfully.")
+        messagebox.showinfo("Delete stock",f"Stock {selected_stock.symbol} deleted successfully.")
 
 
     # Get data from web scraping.
